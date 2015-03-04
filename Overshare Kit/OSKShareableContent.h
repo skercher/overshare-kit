@@ -166,13 +166,6 @@ These can be custom items, or additional instances of the official items above.
 /**
  Convenient constructor for sharing one or more images with a common caption.
  */
-+ (instancetype)contentFromImages:(NSArray *)images
-                          caption:(NSString *)caption;
++ (instancetype)contentFromImages:(NSArray *)images caption:(NSString *)caption subject:(NSString *)subject;
 
 @end
-
-
-
-
-
-
