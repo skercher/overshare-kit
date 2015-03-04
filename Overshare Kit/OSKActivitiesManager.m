@@ -39,6 +39,8 @@
 #import "OSKThingsActivity.h"
 #import "OSKTwitterActivity.h"
 
+static NSString * OSKApplicationCredential_Facebook_Key = @"570217772990728";
+
 #if DEBUG == 1
 // DEVELOPMENT KEYS ONLY, YOUR APP SHOULD SUPPLY YOUR APP CREDENTIALS VIA THE CUSTOMIZATIONS DELEGATE.
 static NSString * OSKApplicationCredential_AppDotNet_Dev = @"pZRc4r5hqKsZ73EW8T2dmaQGBcBNVSr6";
@@ -46,7 +48,7 @@ static NSString * OSKApplicationCredential_Pocket_iPhone_Dev = @"19568-eab36ebc8
 static NSString * OSKApplicationCredential_Pocket_iPad_Dev = @"19568-04ba9f583c2efd7d3c59208f";
 static NSString * OSKApplicationCredential_Readability_Key = @"oversharedev";
 static NSString * OSKApplicationCredential_Readability_Secret = @"hWA7rwPqzvNEaK8ZbRBw9fc5kKBQMdRK";
-static NSString * OSKApplicationCredential_Facebook_Key = @"554155471323751";
+
 static NSString * OSKApplicationCredential_GooglePlus_Key = @"810720596839-qccfsg2b2ljn0cnu76rha48f5dguns3j.apps.googleusercontent.com";
 #endif
 
@@ -362,12 +364,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForPasswordSearchItem:(OSKPasswordManagementAppSearchContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSK1PasswordSearchActivity *onePassword = [self validActivityForType:[OSK1PasswordSearchActivity activityType]
-                                                                   class:[OSK1PasswordSearchActivity class]
-                                                           excludedTypes:excludedActivityTypes
-                                                       requireOperations:requireOperations
-                                                                    item:item];
-    if (onePassword) { [activities addObject:onePassword]; }
+//    OSK1PasswordSearchActivity *onePassword = [self validActivityForType:[OSK1PasswordSearchActivity activityType]
+//                                                                   class:[OSK1PasswordSearchActivity class]
+//                                                           excludedTypes:excludedActivityTypes
+//                                                       requireOperations:requireOperations
+//                                                                    item:item];
+//    if (onePassword) { [activities addObject:onePassword]; }
     
     return activities;
 }
@@ -375,12 +377,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForCopyToPasteboardItem:(OSKCopyToPasteboardContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKCopyToPasteboardActivity *copyToPasteboard = [self validActivityForType:[OSKCopyToPasteboardActivity activityType]
-                                                                         class:[OSKCopyToPasteboardActivity class]
-                                                                 excludedTypes:excludedActivityTypes
-                                                             requireOperations:requireOperations
-                                                                          item:item];
-    if (copyToPasteboard) { [activities addObject:copyToPasteboard]; }
+//    OSKCopyToPasteboardActivity *copyToPasteboard = [self validActivityForType:[OSKCopyToPasteboardActivity activityType]
+//                                                                         class:[OSKCopyToPasteboardActivity class]
+//                                                                 excludedTypes:excludedActivityTypes
+//                                                             requireOperations:requireOperations
+//                                                                          item:item];
+//    if (copyToPasteboard) { [activities addObject:copyToPasteboard]; }
     
     return activities;
 }
@@ -388,19 +390,19 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForToDoListItem:(OSKToDoListEntryContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKOmnifocusActivity *omniFocus = [self validActivityForType:[OSKOmnifocusActivity activityType]
-                                                            class:[OSKOmnifocusActivity class]
-                                                    excludedTypes:excludedActivityTypes
-                                                requireOperations:requireOperations
-                                                             item:item];
-    if (omniFocus) { [activities addObject:omniFocus]; }
-    
-    OSKThingsActivity *things = [self validActivityForType:[OSKThingsActivity activityType]
-                                                     class:[OSKThingsActivity class]
-                                             excludedTypes:excludedActivityTypes
-                                         requireOperations:requireOperations
-                                                      item:item];
-    if (things) { [activities addObject:things]; }
+//    OSKOmnifocusActivity *omniFocus = [self validActivityForType:[OSKOmnifocusActivity activityType]
+//                                                            class:[OSKOmnifocusActivity class]
+//                                                    excludedTypes:excludedActivityTypes
+//                                                requireOperations:requireOperations
+//                                                             item:item];
+//    if (omniFocus) { [activities addObject:omniFocus]; }
+//    
+//    OSKThingsActivity *things = [self validActivityForType:[OSKThingsActivity activityType]
+//                                                     class:[OSKThingsActivity class]
+//                                             excludedTypes:excludedActivityTypes
+//                                         requireOperations:requireOperations
+//                                                      item:item];
+//    if (things) { [activities addObject:things]; }
     
     return activities;
 }
@@ -408,12 +410,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForPhotosharingItem:(OSKPhotoSharingContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKSaveToCameraRollActivity *saveToCameraRoll = [self validActivityForType:[OSKSaveToCameraRollActivity activityType]
-                                                                         class:[OSKSaveToCameraRollActivity class]
-                                                                 excludedTypes:excludedActivityTypes
-                                                             requireOperations:requireOperations
-                                                                          item:item];
-    if (saveToCameraRoll) { [activities addObject:saveToCameraRoll]; }
+//    OSKSaveToCameraRollActivity *saveToCameraRoll = [self validActivityForType:[OSKSaveToCameraRollActivity activityType]
+//                                                                         class:[OSKSaveToCameraRollActivity class]
+//                                                                 excludedTypes:excludedActivityTypes
+//                                                             requireOperations:requireOperations
+//                                                                          item:item];
+//    if (saveToCameraRoll) { [activities addObject:saveToCameraRoll]; }
     
     return activities;
 }
@@ -421,33 +423,33 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForReadLaterItem:(OSKReadLaterContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKReadingListActivity *readingList = [self validActivityForType:[OSKReadingListActivity activityType]
-                                                               class:[OSKReadingListActivity class]
-                                                       excludedTypes:excludedActivityTypes
-                                                   requireOperations:requireOperations
-                                                                item:item];
-    if (readingList) { [activities addObject:readingList]; }
-    
-    OSKInstapaperActivity *instapaper = [self validActivityForType:[OSKInstapaperActivity activityType]
-                                                                 class:[OSKInstapaperActivity class]
-                                                         excludedTypes:excludedActivityTypes
-                                                     requireOperations:requireOperations
-                                                                  item:item];
-    if (instapaper) { [activities addObject:instapaper]; }
-    
-    OSKPocketActivity *pocket = [self validActivityForType:[OSKPocketActivity activityType]
-                                                     class:[OSKPocketActivity class]
-                                             excludedTypes:excludedActivityTypes
-                                         requireOperations:requireOperations
-                                                      item:item];
-    if (pocket) { [activities addObject:pocket]; }
-    
-    OSKReadabilityActivity *readability = [self validActivityForType:[OSKReadabilityActivity activityType]
-                                                               class:[OSKReadabilityActivity class]
-                                                       excludedTypes:excludedActivityTypes
-                                                   requireOperations:requireOperations
-                                                                item:item];
-    if (readability) { [activities addObject:readability]; }
+//    OSKReadingListActivity *readingList = [self validActivityForType:[OSKReadingListActivity activityType]
+//                                                               class:[OSKReadingListActivity class]
+//                                                       excludedTypes:excludedActivityTypes
+//                                                   requireOperations:requireOperations
+//                                                                item:item];
+//    if (readingList) { [activities addObject:readingList]; }
+//    
+//    OSKInstapaperActivity *instapaper = [self validActivityForType:[OSKInstapaperActivity activityType]
+//                                                                 class:[OSKInstapaperActivity class]
+//                                                         excludedTypes:excludedActivityTypes
+//                                                     requireOperations:requireOperations
+//                                                                  item:item];
+//    if (instapaper) { [activities addObject:instapaper]; }
+//    
+//    OSKPocketActivity *pocket = [self validActivityForType:[OSKPocketActivity activityType]
+//                                                     class:[OSKPocketActivity class]
+//                                             excludedTypes:excludedActivityTypes
+//                                         requireOperations:requireOperations
+//                                                      item:item];
+//    if (pocket) { [activities addObject:pocket]; }
+//    
+//    OSKReadabilityActivity *readability = [self validActivityForType:[OSKReadabilityActivity activityType]
+//                                                               class:[OSKReadabilityActivity class]
+//                                                       excludedTypes:excludedActivityTypes
+//                                                   requireOperations:requireOperations
+//                                                                item:item];
+//    if (readability) { [activities addObject:readability]; }
     
     return activities;
 }
@@ -455,12 +457,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForLinkBookmarkingItem:(OSKLinkBookmarkContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKPinboardActivity *pinboardActivity = [self validActivityForType:[OSKPinboardActivity activityType]
-                                                                 class:[OSKPinboardActivity class]
-                                                         excludedTypes:excludedActivityTypes
-                                                     requireOperations:requireOperations
-                                                                  item:item];
-    if (pinboardActivity) { [activities addObject:pinboardActivity]; }
+//    OSKPinboardActivity *pinboardActivity = [self validActivityForType:[OSKPinboardActivity activityType]
+//                                                                 class:[OSKPinboardActivity class]
+//                                                         excludedTypes:excludedActivityTypes
+//                                                     requireOperations:requireOperations
+//                                                                  item:item];
+//    if (pinboardActivity) { [activities addObject:pinboardActivity]; }
     
     return activities;
 }
@@ -468,26 +470,26 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForWebBrowserItem:(OSKWebBrowserContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKSafariActivity *safariActivity = [self validActivityForType:[OSKSafariActivity activityType]
-                                                             class:[OSKSafariActivity class]
-                                                     excludedTypes:excludedActivityTypes
-                                                 requireOperations:requireOperations
-                                                              item:item];
-    if (safariActivity) { [activities addObject:safariActivity]; }
-    
-    OSKChromeActivity *chromeActivity = [self validActivityForType:[OSKChromeActivity activityType]
-                                                             class:[OSKChromeActivity class]
-                                                     excludedTypes:excludedActivityTypes
-                                                 requireOperations:requireOperations
-                                                              item:item];
-    if (chromeActivity) { [activities addObject:chromeActivity]; }
-
-    OSK1PasswordBrowserActivity *onePassword = [self validActivityForType:[OSK1PasswordBrowserActivity activityType]
-                                                                    class:[OSK1PasswordBrowserActivity class]
-                                                            excludedTypes:excludedActivityTypes
-                                                        requireOperations:requireOperations
-                                                                     item:item];
-    if (onePassword) { [activities addObject:onePassword]; }
+//    OSKSafariActivity *safariActivity = [self validActivityForType:[OSKSafariActivity activityType]
+//                                                             class:[OSKSafariActivity class]
+//                                                     excludedTypes:excludedActivityTypes
+//                                                 requireOperations:requireOperations
+//                                                              item:item];
+//    if (safariActivity) { [activities addObject:safariActivity]; }
+//    
+//    OSKChromeActivity *chromeActivity = [self validActivityForType:[OSKChromeActivity activityType]
+//                                                             class:[OSKChromeActivity class]
+//                                                     excludedTypes:excludedActivityTypes
+//                                                 requireOperations:requireOperations
+//                                                              item:item];
+//    if (chromeActivity) { [activities addObject:chromeActivity]; }
+//
+//    OSK1PasswordBrowserActivity *onePassword = [self validActivityForType:[OSK1PasswordBrowserActivity activityType]
+//                                                                    class:[OSK1PasswordBrowserActivity class]
+//                                                            excludedTypes:excludedActivityTypes
+//                                                        requireOperations:requireOperations
+//                                                                     item:item];
+//    if (onePassword) { [activities addObject:onePassword]; }
     
     return activities;
 }
@@ -495,12 +497,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForAirDropItem:(OSKAirDropContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKAirDropActivity *airDrop = [self validActivityForType:[OSKAirDropActivity activityType]
-                                                             class:[OSKAirDropActivity class]
-                                                     excludedTypes:excludedActivityTypes
-                                                 requireOperations:requireOperations
-                                                              item:item];
-    if (airDrop) { [activities addObject:airDrop]; }
+//    OSKAirDropActivity *airDrop = [self validActivityForType:[OSKAirDropActivity activityType]
+//                                                             class:[OSKAirDropActivity class]
+//                                                     excludedTypes:excludedActivityTypes
+//                                                 requireOperations:requireOperations
+//                                                              item:item];
+//    if (airDrop) { [activities addObject:airDrop]; }
     
     return activities;
 }
