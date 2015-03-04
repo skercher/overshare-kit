@@ -299,19 +299,19 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
                                                     item:item];
     if (twitter) { [activities addObject:twitter]; }
     
-    OSKAppDotNetActivity *appDotNet = [self validActivityForType:[OSKAppDotNetActivity activityType]
-                                                       class:[OSKAppDotNetActivity class]
-                                               excludedTypes:excludedActivityTypes
-                                           requireOperations:requireOperations
-                                                        item:item];
-    if (appDotNet) { [activities addObject:appDotNet]; }
+    // OSKAppDotNetActivity *appDotNet = [self validActivityForType:[OSKAppDotNetActivity activityType]
+    //                                                   class:[OSKAppDotNetActivity class]
+    //                                           excludedTypes:excludedActivityTypes
+    //                                       requireOperations:requireOperations
+    //                                                     item:item];
+    // if (appDotNet) { [activities addObject:appDotNet]; }
 
-    OSKGooglePlusActivity *googlePlus = [self validActivityForType:[OSKGooglePlusActivity activityType]
-                                                             class:[OSKGooglePlusActivity class]
-                                                     excludedTypes:excludedActivityTypes
-                                                 requireOperations:requireOperations
-                                                              item:item];
-    if (googlePlus) { [activities addObject:googlePlus]; }
+    // OSKGooglePlusActivity *googlePlus = [self validActivityForType:[OSKGooglePlusActivity activityType]
+    //                                                          class:[OSKGooglePlusActivity class]
+    //                                                  excludedTypes:excludedActivityTypes
+    //                                              requireOperations:requireOperations
+    //                                                           item:item];
+    // if (googlePlus) { [activities addObject:googlePlus]; }
     
     return activities;
 }
