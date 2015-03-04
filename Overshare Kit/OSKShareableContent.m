@@ -227,7 +227,7 @@
     return content;
 }
 
-+ (instancetype)contentFromImages:(NSArray *)images caption:(NSString *)caption {
++ (instancetype)contentFromImages:(NSArray *)images caption:(NSString *)caption subject:(NSString *)subject {
     OSKShareableContent *content = [[OSKShareableContent alloc] init];
     
     // CONTENT TITLE
@@ -289,6 +289,7 @@
     emailItem.body = caption;
     emailItem.attachments = images.copy;
     content.emailItem = emailItem;
+    emailItem.subject = subject;
     
     // SMS
     
