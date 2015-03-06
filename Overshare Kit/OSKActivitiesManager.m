@@ -644,6 +644,15 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
     if ([self.customizationsDelegate respondsToSelector:@selector(applicationCredentialForActivityType:)]) {
         appCredential = [self.customizationsDelegate applicationCredentialForActivityType:activityType];
     }
+    
+    if ([activityType isEqualToString:OSKActivityType_iOS_Facebook]) {
+        appCredential = [[OSKApplicationCredential alloc]
+                         initWithOvershareApplicationKey:OSKApplicationCredential_Facebook_Key
+                         applicationSecret:nil
+                         appName:@"Overshare"];
+    }
+
+    
 #if DEBUG == 1
     else {
         // THESE ARE DEVELOPMENT CREDENTIALS ONLY, TO MAKE DEMOING OVERSHARE SIMPLE FOR US.
